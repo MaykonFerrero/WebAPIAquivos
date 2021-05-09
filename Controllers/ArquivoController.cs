@@ -15,15 +15,15 @@ namespace Gerenciador_Arquivos.Controllers
     public class ArquivoController : ControllerBase
     {
         private static string diretorio;
-        private SHA256 Sha256 = SHA256.Create();
+        private SHA256 Sha256 = SHA256.Create(); //cria uma instância para implementar o SHA256
 
         public ArquivoController()
         {
-            diretorio = Path.Combine(Directory.GetCurrentDirectory(), "arquivos");
+            diretorio = Path.Combine(Directory.GetCurrentDirectory(), "arquivos"); //guarda em diretorio o caminho para a pasta chamada de "arquivos" 
 
-            if (!Directory.Exists(diretorio))
+            if (!Directory.Exists(diretorio)) // caso não haja o diretório "arquivos" 
             {
-                Directory.CreateDirectory(diretorio);
+                Directory.CreateDirectory(diretorio); //cria-se o diretório "arquivos" no endereço da variável diretorio
             }
         }
 
@@ -36,11 +36,11 @@ namespace Gerenciador_Arquivos.Controllers
         }
 
         [HttpPost("upload")]
-        public async Task<string> EnviaArquivo([FromForm] IFormFile arquivo)
+        public async Task<string> EnviaArquivo([FromForm] IFormFile arquivo) // espera de maneira assíncrona até que um arquivo seja enviado
         {
-            if (arquivo.Length > 0)
+            if (arquivo.Length > 0) //quando recebe um arquivo de tamanho > 0 
             {
-                try
+                try // é necessário ter um método try catch pois podem ocorrer excessões
                 {
                     using (FileStream filestream = System.IO.File.Create(Path.Combine(diretorio, arquivo.FileName)))
                     {
@@ -50,11 +50,11 @@ namespace Gerenciador_Arquivos.Controllers
                         byte[] hash = Sha256.ComputeHash(arquivo.OpenReadStream());
                         string strHash = BytesToString(hash);
 
-                        string resposta = "Arquivo recebido.";
+                        string resposta = "Arquivo recebido.";     // a variável resposta contém a sinalização de que o arquivo foi recebido
                         resposta += $"\nNome: {arquivo.FileName}";
                         resposta += $"\nTamanho: {arquivo.Length} bytes";
                         resposta += $"\nHash: {strHash}";
-                        return resposta;
+                        return resposta; // além da mensagem, a variável carrega as informações do nome , tamanho e HASH do arquivo
                     }
                 }
                 catch (Exception ex)
@@ -64,7 +64,7 @@ namespace Gerenciador_Arquivos.Controllers
             }
             else
             {
-                return "Ocorreu uma falha no envio do arquivo...";
+                return "Ocorreu uma falha no envio do arquivo..."; // caso ocorra erro de upload a aplicação retorna esta mensagem
             }
         }
 
