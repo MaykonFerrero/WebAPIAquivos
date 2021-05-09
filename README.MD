@@ -5,7 +5,7 @@ Status do Projeto: Concluído :heavy_check_mark:
 
 
 *******
-## Tabelas de conteúdo 
+## Tabela de conteúdo 
  1. [Descrição](#descricao)
  2. [Funcionalidades](#funcional)
  3. [Pré-requisitos](#prereq)
@@ -40,8 +40,8 @@ explicando as decisões tomadas para cada objetivo do desafio e o passo-a-passo 
 <div id='prereq'/>
 
 ## Pré-requisitos
-1. Antes de começar, você vai precisar intalar o Visual Studio em sua máquina.
-2. Para utilizar a solução é preciso ter algum cliente REST instalado, como o Insomnia (https://insomnia.rest/download) ou Postman.
+1. Antes de começar, você vai precisar instalar o Visual Studio em sua máquina.
+2. Também é preciso ter algum cliente REST instalado, como o Insomnia (https://insomnia.rest/download) ou Postman.
 
 
 <div id='execucao'/>  
