@@ -51,7 +51,7 @@ explicando as decisões tomadas para cada objetivo do desafio e o passo-a-passo 
 2. Vá na pasta de download e descompacte o arquivo baixado (clique na opção Extract to "WebAPIAquivos-master")
 3. Clique com o botão direito do mouse na pasta descompactada e escolha a opção Abrir com > VisualStudio
 4. Depois que o Visual Studio iniciar busque no canto direito o campo Gerenciador de Soluções
-5. Busque o arquivo Gerenciador de Aplicativos e clique duas vezes para visualizar os arquivos da aplicação
+5. Busque o arquivo Gerenciador Arquivos e clique duas vezes para visualizar os arquivos da aplicação
 6. Ainda na aba Gerenciador de Soluções busque o campo Controller e clique duas vezes (você verá o controlador desenvolvido). Para executar, abra a solução no Visual Studio, efetue a construção do projeto com o comando Build e em seguida rode o projeto clicando no botão "IIS Express".
 
 
